@@ -1,0 +1,16 @@
+{
+    "deno.enable": true,
+    "[typescript]": {
+      "editor.defaultFormatter": "denoland.vscode-deno"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "denoland.vscode-deno"
+    },
+    "compilerOptions": {
+      "strict": false, // Disable all strict type-checking options
+      "noImplicitAny": false, // Allow expressions and declarations with an implied 'any' type
+      "strictNullChecks": false, // When type checking, take into account 'null' and 'undefined'
+      // Add more options as needed
+    }
+  }
+  

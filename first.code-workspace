@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"deno.enable": true,
-		"deno.lint": true,
-		"deno.unstable": true
+		"deno.lint": false,
+		"deno.unstable": true,
+		"deno.config": "./tsconfig.json"
 	}
 }

@@ -4,14 +4,28 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [        
-        
         {
             "request": "launch",
             "name": "Launch Server",
             "type": "node",
             "program": "${workspaceFolder}/server.ts",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "/Users/rudigermoller/.deno/bin/deno",
+            "runtimeExecutable": "/home/moru0011/.deno/bin/deno",
+            "runtimeArgs": [
+                "run",
+                "--unstable",
+                "--inspect-wait",
+                "--allow-all"
+            ],
+            "attachSimplePort": 9229
+        },
+        {
+            "request": "launch",
+            "name": "Launch fwparse",
+            "type": "node",
+            "program": "${workspaceFolder}/fwparse.ts",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "/home/moru0011/.deno/bin/deno",
             "runtimeArgs": [
                 "run",
                 "--unstable",
@@ -26,7 +40,7 @@
             "type": "node",
             "program": "${workspaceFolder}/client.ts",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "/Users/rudigermoller/.deno/bin/deno",
+            "runtimeExecutable": "/home/moru0011/.deno/bin/deno",
             "runtimeArgs": [
                 "run",
                 "--unstable",
