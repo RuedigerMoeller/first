@@ -1,3 +1,11 @@
+export class Literally {
+  content: string;
+
+  constructor(s:string) {
+    this.content = s;
+  }
+}
+
 export class RestServer {
 
     api: any;
@@ -22,6 +30,9 @@ export class RestServer {
       }
       try {
         const res = await fun.call(this.api, args);
+        if ( res instanceof Literally ) {
+          return new Response(res.content,{ status: 200 });
+        }
         return new Response(JSON.stringify(res),{ status: 200 });
       } catch (e) {
         console.log(e);
@@ -31,6 +42,20 @@ export class RestServer {
     }
     
     async handler(request: Request): Promise<Response> {
+      // const headers = new Headers();
+
+      // headers.set("Access-Control-Allow-Origin", "*"); // Allow all domains
+      // headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+      // headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    
+      // // Handle preflight requests
+      // if (request.method === "OPTIONS") {
+      //   return new Response(null, {
+      //     status: 204, // No content
+      //     headers,
+      //   });
+      // }
+    
       if( request.method === "GET" ) {
         let url = new URL(request.url);
         const path = url.pathname;

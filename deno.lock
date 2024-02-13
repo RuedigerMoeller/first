@@ -1,0 +1,14 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://deno.land/x/postgres/mod.ts": "https://deno.land/x/postgres@v0.17.0/mod.ts"
+  },
+  "remote": {},
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:supabase@^1.99.5"
+      ]
+    }
+  }
+}

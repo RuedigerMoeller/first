@@ -15,9 +15,10 @@
                 "run",
                 "--unstable",
                 "--inspect-wait",
+                "--inspect=0.0.0.0:9231",
                 "--allow-all"
             ],
-            "attachSimplePort": 9229
+            "attachSimplePort": 9231
         },
         {
             "request": "launch",
