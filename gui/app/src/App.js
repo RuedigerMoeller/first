@@ -153,11 +153,11 @@ class QueryComp extends Component {
   render() {
     return <>
       <center><SearchField onEnter={this.onTicker.bind(this)} /></center>
-      <br/>
-      <div style={{paddingLeft: 16}}>{this.state.ticker}</div>
-      <div><MultiLineChart data={this.state.data} /></div>
-      <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
+      <br />
+      <div style={{ paddingLeft: 32 }}>{this.state.ticker}</div>
+      <div style={{ padding: 16 }}><MultiLineChart data={this.state.data} /></div>
     </>;
+    //       <pre>{JSON.stringify(this.state.data, null, 2)}</pre>
   }
 
 }
@@ -208,7 +208,7 @@ const MultiLineChart = ({ data }) => {
 function App() {
   return (
     <div>
-      <div style={ {paddingTop: "24px"}}>
+      <div style={{ paddingTop: "24px" }}>
         <QueryComp />
       </div>
     </div>

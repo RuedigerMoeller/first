@@ -14,12 +14,14 @@ class MyApiImpl implements MyApi {
     return cont;
   }
 
-  async query(query: { ticker: string; rangeDays: number }) {
+  async query(query: { ticker: string; rangeDays: number }) : Promise<any> {
     let startMS = 0;
     if (!query.rangeDays) {
       startMS = 0;
     } else {
-      startMS = new Date().getTime() - query.rangeDays * 24 * 60 * 60 * 1000;
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+      startMS = now.getTime() - query.rangeDays * 24 * 60 * 60 * 1000;
     }
 
     const res: FinVizParse[] = await db.query(query.ticker, startMS);
@@ -33,7 +35,7 @@ class MyApiImpl implements MyApi {
           oi: x.getPCOIRatio(),
           activeVol: Number(x.callVol) + Number(x.putVol),
         };
-      }),
+      }).filter( x => x.activeVol != 0 ),
       null,
       2,
     ));

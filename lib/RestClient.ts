@@ -12,7 +12,7 @@ export function RestClient(basePath: string): any {
           body: JSON.stringify(args[0]) // Convert the data object to a JSON string
         });
         const resJson: ApiResponse = await res.json();
-        console.log("client post res", resJson);
+        //console.log("client post res", resJson);
         return resJson;
       }
     },

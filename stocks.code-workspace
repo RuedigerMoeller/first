@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"deno.enable": true,
+		"deno.lint": false,
+		"deno.unstable": true,
+		"deno.config": "./tsconfig.json"
+	}
+}
