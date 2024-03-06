@@ -21,9 +21,14 @@ async function dumpTicker(ticker: string, exp: string, ins: boolean = true) {
 }
 
 async function poll(ins: boolean = true) {
-  const expiry = "2024-03-01";
+  const expiry = "2024-03-08";
   const slowExpiry = "2024-03-15";
   let syms = [
+    "CRWD",
+    "AI",
+    "OKTA",
+    "SNOW",
+    "FSLR",
     "WDAY",
     "BKNG",
     "CVNA",
@@ -46,6 +51,7 @@ async function poll(ins: boolean = true) {
     "META",
     "MSFT",
     "GOOG",
+    "COST",
     "CSCO",
     "NVDA",
     "BABA",

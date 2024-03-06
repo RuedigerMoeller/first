@@ -1,0 +1,7 @@
+# Node modules
+node_modules/
+
+# Cache directories
+cache/
+*.cache
+*Cache/
